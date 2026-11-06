@@ -1,0 +1,8 @@
+submitLabel: Сохранить платёж
+fields:
+  number:    { label: Номер }
+  date:      { label: Дата }
+  status:    { label: Статус, options: ["draft=Черновик", "pending=В обработке", "completed=Исполнен"] }
+  amount:    { label: Сумма, patternMessage: "До 2 знаков после точки" }
+  currency:  { label: Валюта }
+  purpose:   { label: Назначение платежа }

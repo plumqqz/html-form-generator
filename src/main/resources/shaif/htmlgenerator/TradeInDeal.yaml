@@ -1,0 +1,33 @@
+method: post
+submitLabel: Save deal
+fields:
+  orgName:       { order: "010", required: true, maxLength: 300 }
+  inn:           { order: "011", pattern: "\\d{10}", patternMessage: "10 digits" }
+  kpp:           { order: "012", pattern: "\\d{9}",  patternMessage: "9 digits" }
+  contactPerson: { order: "013", maxLength: 200 }
+  contactPhone:  { order: "014", pattern: "\\+?\\d[\\d\\s\\-()]{7,20}" }
+  contactEmail:  { order: "015", pattern: "[^@\\s]+@[^@\\s]+\\.[^@\\s]{2,}" }
+
+  newCarVin:    { order: "020", required: true, pattern: "[A-HJ-NPR-Z0-9]{17}" }
+  newCarMake:   { order: "021", type: SELECT,
+                  options: ["audi=Audi", "bmw=BMW", "mercedes=Mercedes",
+                            "toyota=Toyota", "volvo=Volvo"] }
+  newCarModel:  { order: "022", type: SELECT }
+  newCarYear:   { order: "023", pattern: "(19|20)\\d{2}" }
+  newCarColor:  { order: "024" }
+  newCarPrice:  { order: "025", pattern: "\\d{1,10}(\\.\\d{1,2})?" }
+
+  tradeInVin:       { order: "030", required: true, pattern: "[A-HJ-NPR-Z0-9]{17}" }
+  tradeInMake:      { order: "031", type: SELECT }
+  tradeInModel:     { order: "032", type: SELECT }
+  tradeInYear:      { order: "033", pattern: "(19|20)\\d{2}" }
+  tradeInMileage:   { order: "034", pattern: "\\d{1,7}" }
+  tradeInCondition: { order: "035", type: SELECT }
+
+  loanAmount:    { order: "040", pattern: "\\d{1,10}(\\.\\d{1,2})?" }
+  loanTerm:      { order: "041", pattern: "\\d{1,3}" }
+  interestRate:  { order: "042", pattern: "\\d{1,2}(\\.\\d{1,2})?" }
+  paymentMethod: { order: "043", type: SELECT }
+  paymentDate:   { order: "044", type: DATE }
+
+  notes:         { order: "900", type: TEXTAREA, maxLength: 2000 }

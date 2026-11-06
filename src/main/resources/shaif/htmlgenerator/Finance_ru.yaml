@@ -1,0 +1,9 @@
+fields:
+  bankName:    { label: Наименование банка }
+  bik:         { label: БИК }
+  bankAccount: { label: Расчётный счёт }
+  corrAccount: { label: Корр. счёт }
+  iban:        { label: IBAN }
+  amount:      { label: Сумма }
+  currency:    { label: Валюта }
+  vatRate:     { label: "Ставка НДС, %" }

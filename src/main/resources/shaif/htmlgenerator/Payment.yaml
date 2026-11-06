@@ -1,0 +1,12 @@
+method: post
+submitLabel: Save payment
+fields:
+  number:    { label: Number, order: "001", required: true, maxLength: 30, pattern: "[A-Za-z0-9\\-/]{1,30}" }
+  date:      { label: Date, type: DATE, order: "002" }
+  status:    { label: Status, type: SELECT, order: "003", emptyOption: false,
+               options: ["draft=Draft", "pending=Pending", "completed=Completed"] }
+  amount:    { label: Amount, order: "010", required: true, cssClass: "form-control text-right",
+               pattern: "\\d{1,15}(\\.\\d{1,2})?", patternMessage: "Up to 2 decimals" }
+  currency:  { label: Currency, type: SELECT, order: "011", emptyOption: false,
+               options: ["RUB=RUB", "USD=USD", "EUR=EUR"] }
+  purpose:   { label: Purpose, type: TEXTAREA, order: "020", required: true, maxLength: 210 }

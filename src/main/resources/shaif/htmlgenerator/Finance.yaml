@@ -1,0 +1,12 @@
+fields:
+  bankName:    { order: "050", maxLength: 300 }
+  bik:         { order: "051", pattern: "\\d{9}", patternMessage: "9 digits" }
+  bankAccount: { order: "052", pattern: "\\d{20}", patternMessage: "20 digits" }
+  corrAccount: { order: "053", pattern: "\\d{20}", patternMessage: "20 digits" }
+  iban:        { order: "054", pattern: "[A-Z]{2}\\d{2}[A-Z0-9]{10,30}" }
+  amount:      { order: "060", cssClass: "form-control text-right",
+                 pattern: "\\d{1,15}(\\.\\d{1,2})?", patternMessage: "Up to 2 decimals" }
+  currency:    { order: "061", type: SELECT, emptyOption: false,
+                 options: ["RUB=RUB", "USD=USD", "EUR=EUR"] }
+  vatRate:     { order: "062", type: SELECT, emptyOption: false,
+                 options: ["0", "5", "7", "10", "20"] }

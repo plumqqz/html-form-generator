@@ -1,0 +1,10 @@
+extends: [Person, Finance]
+fields:
+  number:    { order: "001", required: true, maxLength: 30,
+               pattern: "[A-Za-z0-9\\-]{1,30}" }
+  date:      { order: "002", type: DATE, required: true }
+  status:    { order: "003", type: SELECT, emptyOption: false,
+               options: ["new=New", "paid=Paid", "shipped=Shipped",
+                         "delivered=Delivered", "cancelled=Cancelled"] }
+  quantity:  { order: "070", pattern: "\\d{1,6}", patternMessage: "Integer" }
+  notes:     { order: "900", type: TEXTAREA, maxLength: 1000 }

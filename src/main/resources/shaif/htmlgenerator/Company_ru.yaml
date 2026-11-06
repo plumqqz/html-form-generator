@@ -1,0 +1,8 @@
+fields:
+  orgName:       { label: Наименование организации }
+  orgInn:        { label: ИНН }
+  orgKpp:        { label: КПП }
+  orgOgrn:       { label: ОГРН }
+  contactPerson: { label: Контактное лицо }
+  contactPhone:  { label: Телефон }
+  contactEmail:  { label: Email }

@@ -1,0 +1,21 @@
+fields:
+  lastName:      { order: "010", required: true, maxLength: 100,
+                   pattern: "[A-Za-zА-Яа-яЁё\\- ]{1,100}", patternMessage: "Letters, hyphens, spaces" }
+  firstName:     { order: "011", required: true, maxLength: 100,
+                   pattern: "[A-Za-zА-Яа-яЁё\\- ]{1,100}", patternMessage: "Letters, hyphens, spaces" }
+  middleName:    { order: "012", maxLength: 100 }
+  birthDate:     { order: "013", type: DATE }
+  gender:        { order: "014", type: SELECT, emptyOption: false,
+                   options: ["M=Male", "F=Female"] }
+  email:         { order: "020", required: true,
+                   pattern: "[^@\\s]+@[^@\\s]+\\.[^@\\s]{2,}", patternMessage: "Invalid email" }
+  phone:         { order: "021",
+                   pattern: "\\+?\\d[\\d\\s\\-()]{7,20}", patternMessage: "Invalid phone" }
+  inn:           { order: "030", pattern: "\\d{12}", patternMessage: "12 digits" }
+  snils:         { order: "031", pattern: "\\d{3}-?\\d{3}-?\\d{3}\\s?\\d{2}", patternMessage: "XXX-XXX-XXX YY" }
+  postalCode:    { order: "040", pattern: "\\d{6}", patternMessage: "6 digits" }
+  region:        { order: "041", maxLength: 100 }
+  city:          { order: "042", maxLength: 100 }
+  street:        { order: "043", maxLength: 200 }
+  house:         { order: "044", maxLength: 20 }
+  apartment:     { order: "045", maxLength: 20 }

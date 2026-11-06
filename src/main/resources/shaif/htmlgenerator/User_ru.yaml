@@ -1,0 +1,15 @@
+submitLabel: Сохранить
+fields:
+  firstName:   { label: Имя, placeholder: Иван }
+  lastName:    { label: Фамилия, placeholder: Иванов }
+  middleName:  { label: Отчество }
+  birthDate:   { label: Дата рождения }
+  gender:      { label: Пол, options: ["M=Мужской", "F=Женский"] }
+  email:       { label: Электронная почта, patternMessage: "Неверный формат email" }
+  phone:       { label: Телефон, placeholder: "+7 (___) ___-__-__" }
+  country:     { label: Страна }
+  city:        { label: Город }
+  role:        { label: Роль }
+  department:  { label: Отдел }
+  permissions: { label: Права, options: ["read=Чтение", "write=Запись", "admin=Админ"] }
+  active:      { label: Активен }

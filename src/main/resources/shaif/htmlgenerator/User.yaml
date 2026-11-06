@@ -1,0 +1,17 @@
+method: post
+submitLabel: Save
+fields:
+  firstName:   { label: First name, tableLabel: Name,    required: true, order: "001", maxLength: 50 }
+  lastName:    { label: Last name,  tableLabel: Surname, required: true, order: "002", maxLength: 50 }
+  middleName:  { label: Middle name, tableLabel: Middle, order: "001.005", required: false }
+  birthDate:   { label: Date of birth, tableLabel: DOB, type: DATE, order: "003" }
+  gender:      { label: Gender, type: SELECT, order: "004", emptyOption: false }
+  email:       { label: Email, order: "005", pattern: "[^@\\s]+@[^@\\s]+\\.[^@\\s]{2,}", patternMessage: "Invalid email" }
+  phone:       { label: Phone, order: "006" }
+  country:     { label: Country,    type: SELECT, order: "007" }
+  city:        { label: City,       type: SELECT, order: "008" }
+  role:        { label: Role,       type: SELECT, order: "009" }
+  department:  { label: Department, type: SELECT, order: "010" }
+  permissions: { label: Permissions, type: SELECT, multiple: true, order: "011",
+                 options: ["read=Read", "write=Write", "admin=Admin"] }
+  active:      { label: Active, order: "012" }

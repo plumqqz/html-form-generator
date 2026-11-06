@@ -1,0 +1,8 @@
+fields:
+  number:    { label: Номер заказа }
+  date:      { label: Дата }
+  status:    { label: Статус,
+               options: ["new=Новый", "paid=Оплачен", "shipped=Отправлен",
+                         "delivered=Доставлен", "cancelled=Отменён"] }
+  quantity:  { label: Количество }
+  notes:     { label: Примечания }

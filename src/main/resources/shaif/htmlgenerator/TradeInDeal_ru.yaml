@@ -1,0 +1,30 @@
+submitLabel: Отправить заявку
+fields:
+  orgName:       { label: Название организации }
+  inn:           { label: ИНН }
+  kpp:           { label: КПП }
+  contactPerson: { label: Контактное лицо }
+  contactPhone:  { label: Телефон }
+  contactEmail:  { label: Email }
+
+  newCarVin:    { label: VIN нового авто }
+  newCarMake:   { label: Марка }
+  newCarModel:  { label: Модель }
+  newCarYear:   { label: Год выпуска }
+  newCarColor:  { label: Цвет }
+  newCarPrice:  { label: Стоимость }
+
+  tradeInVin:       { label: VIN сдаваемого авто }
+  tradeInMake:      { label: Марка }
+  tradeInModel:     { label: Модель }
+  tradeInYear:      { label: Год выпуска }
+  tradeInMileage:   { label: Пробег (км) }
+  tradeInCondition: { label: Состояние }
+
+  loanAmount:    { label: Сумма кредита }
+  loanTerm:      { label: Срок (мес.) }
+  interestRate:  { label: Ставка (%) }
+  paymentMethod: { label: Способ оплаты }
+  paymentDate:   { label: Дата оплаты }
+
+  notes:         { label: Примечания }

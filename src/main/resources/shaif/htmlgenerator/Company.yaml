@@ -1,0 +1,8 @@
+fields:
+  orgName:       { order: "010", required: true, maxLength: 300 }
+  orgInn:        { order: "011", pattern: "\\d{10}", patternMessage: "10 digits" }
+  orgKpp:        { order: "012", pattern: "\\d{9}",  patternMessage: "9 digits" }
+  orgOgrn:       { order: "013", pattern: "\\d{13}", patternMessage: "13 digits" }
+  contactPerson: { order: "014", maxLength: 200 }
+  contactPhone:  { order: "015", pattern: "\\+?\\d[\\d\\s\\-()]{7,20}", patternMessage: "Invalid phone" }
+  contactEmail:  { order: "016", pattern: "[^@\\s]+@[^@\\s]+\\.[^@\\s]{2,}", patternMessage: "Invalid email" }

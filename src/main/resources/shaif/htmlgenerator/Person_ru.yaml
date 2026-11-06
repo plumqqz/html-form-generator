@@ -1,0 +1,16 @@
+fields:
+  lastName:      { label: Фамилия }
+  firstName:     { label: Имя }
+  middleName:    { label: Отчество }
+  birthDate:     { label: Дата рождения }
+  gender:        { label: Пол, options: ["M=Мужской", "F=Женский"] }
+  email:         { label: Email }
+  phone:         { label: Телефон }
+  inn:           { label: ИНН }
+  snils:         { label: СНИЛС }
+  postalCode:    { label: Почтовый индекс }
+  region:        { label: Регион }
+  city:          { label: Город }
+  street:        { label: Улица }
+  house:         { label: Дом }
+  apartment:     { label: Квартира }

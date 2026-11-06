@@ -1,0 +1,14 @@
+fields:
+  firstName: { label: First name }
+  lastName:  { label: Last name }
+  middleName:{ label: Middle name }
+  birthDate: { label: Date of birth }
+  gender:    { label: Gender, options: ["M=Male", "F=Female"] }
+  email:     { label: Email, patternMessage: "Invalid email format" }
+  phone:     { label: Phone }
+  country:   { label: Country }
+  city:      { label: City }
+  role:      { label: Role }
+  department:{ label: Department }
+  permissions: { label: Permissions, options: ["read=Read", "write=Write", "admin=Admin"] }
+  active:    { label: Active }
