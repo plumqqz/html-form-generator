@@ -2,6 +2,10 @@ package shaif.htmlgenerator.htmlform;
 import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class FormGenTest {
@@ -434,5 +438,25 @@ class FormGenTest {
         assertTrue(find(cs, "email").required);
         assertTrue(find(cs, "contactEmail").required);
         assertFalse(find(cs, "phone").required);
+    }
+    @Test
+    void independentInstancesAreSafe() throws Exception {
+        int threads = 32, iterations = 5_000;
+        ExecutorService pool = Executors.newFixedThreadPool(threads);
+        List<Future<?>> futures = new ArrayList<>();
+        for (int t = 0; t < threads; t++) {
+            futures.add(pool.submit(() -> {
+                for (int i = 0; i < iterations; i++) {
+                    Map<String, Object> data = Map.of("email", "u@e.com", "amount", 1);
+                    Map<String, Object> spec = YamlSpec.loadFromString(
+                            "fields:\n  email: { label: Почта, required: true }\n");
+                    String html = FormGen.ofData(data).yaml(spec).form("/save", "post");
+                    if (!html.contains("name=\"email\"")) throw new AssertionError(html);
+                }
+                return null;
+            }));
+        }
+        for (Future<?> f : futures) f.get();
+        pool.shutdown();
     }
 }
